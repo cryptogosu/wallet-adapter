@@ -4,6 +4,7 @@ import pink from '@material-ui/core/colors/pink';
 import { WalletAdapterNetwork, WalletError } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
+    getCloverWallet,
     getLedgerWallet,
     getPhantomWallet,
     getSlopeWallet,
@@ -55,6 +56,7 @@ const WalletContextProvider: FC = ({ children }) => {
 
     const wallets = useMemo(
         () => [
+            getCloverWallet(),
             getPhantomWallet(),
             getSlopeWallet(),
             getSolflareWallet(),
